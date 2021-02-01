@@ -15,8 +15,11 @@ function crearGato(nombre, edad) {
   // Devuelve el objeto
   // Tu código:
 }
+
+
 function agregarPropiedad(objeto, property) {
   objeto[property]= null;
+
 return objeto;
   // Agrega una propiedad al objeto (argumento "objeto") con el valor `null`
   // Devuelve el objeto
@@ -25,7 +28,7 @@ return objeto;
 }
 
 function invocarMetodo(objeto, metodo) {
-  objeto[metodo](); 
+  objeto[metodo]()
   // "metodo" es una cadena que contiene el nombre de un método (funcion) en el objeto
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
@@ -33,7 +36,12 @@ function invocarMetodo(objeto, metodo) {
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
-  return objetoMisterioso['numeroMisterioso']* 5;
+  var objetoMisterioso = {
+    numeroMisterioso: 3 ,
+    }
+    producto= function () {
+      return this.numeroMisterioso * 5;
+    }
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
@@ -50,17 +58,20 @@ function eliminarPropiedad(objeto, propiedad) {
 
 function nuevoUsuario(nombre, email, password) {
   var nuevoUsuario = {
-    nombre:nombre,
+    nombre:nombre ,
     email:email,
     password:password,
   }
-  return nuevoUsuario;
+  return nuevoUsuario; 
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
+
 }
+
 function tieneEmail(usuario) {
-  if (usuario['email']){
+
+if (usuario['email']){
   return true;
 } else {
 return false;
@@ -70,35 +81,34 @@ return false;
   // De lo contratio, devuelve "false"
   // Tu código:
 
+
 function tienePropiedad(objeto, propiedad) {
-    if(objeto[propiedad]) {
+  if(objeto[propiedad]) {
     return true;
 } else {
   return false;
+}
   // Devuelve "true" si el objeto tiene el valor del argumento "propiedad"
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-}
-}
 function verificarPassword(usuario, password) {
-  return usuario['password'] === password;
+  if(usuario['password'] === 'password') {
+    return true;
+  } return false;
   // Comprueba si la "password" enviada coincide con la propiedad "password" del objeto "usuario"
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
 }
+
 function actualizarPassword(usuario, nuevaPassword) {
-usuario.password = nuevaPassword;
-return usuario;
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
 }
 
 function agregarAmigo(usuario, nuevoAmigo) {
-usuario.amigos.push(nuevoAmigo);
- return usuario;
   // "usuario" tiene una propiedad llamada "amigos" que es un array
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
@@ -106,9 +116,6 @@ usuario.amigos.push(nuevoAmigo);
 }
 
 function pasarUsuarioAPremium(usuarios) {
-  for (var i = 0; i < usuarios.length; i++) {
-    usuarios[i].esPremium = true;
-  } return usuarios;
   // "usuarios" es un array de objetos "usuario"
   // Cada objeto "usuario" tiene la propiedad "esPremium"
   // Define cada propiedad "esPremium" de cada objeto como "true"
@@ -117,11 +124,6 @@ function pasarUsuarioAPremium(usuarios) {
 }
 
 function sumarLikesDeUsuario(usuario) {
-  var suma = 0;
-  for (var i = 0; i < usuario.posts.length; i++) {
-   suma = suma + usuario.posts[i].likes; 
-  }
-  return suma;
   // "usuario" tiene una propiedad llamada "posts" que es un array
   // "posts" es un array de objetos "post"
   // Cada objeto "post" tiene una propiedad llamada "likes" que es un entero (int/integer)
@@ -131,10 +133,6 @@ function sumarLikesDeUsuario(usuario) {
 }
 
 function agregarMetodoCalculoDescuento(producto) {
-  producto.calcularPrecioDescuento = function() {
-    return producto.precio - (producto.precio * producto.porcentajeDeDescuento)
-  }
-  return producto;
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
   // Este método debe multiplicar el "precio" del "producto" ("producto.precio" o "producto[precio]") y "porcentajeDeDescuento" para obtener el descuento
   // El método resta el descuento del precio y devuelve el precio con descuento
@@ -165,4 +163,4 @@ module.exports = {
   pasarUsuarioAPremium,
   sumarLikesDeUsuario,
   agregarMetodoCalculoDescuento
-};
+
