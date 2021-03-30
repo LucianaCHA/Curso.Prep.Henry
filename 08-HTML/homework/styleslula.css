@@ -1,0 +1,33 @@
+ h1 {
+      	color: black
+      	align-text: left;
+    }
+.img {
+        width: 400px;
+	justify-content: center;
+    }
+
+
+#item 	{
+	justify-content: auto;
+        width: 700px;
+        padding: 50px;
+ 	align-text: left;
+        }
+
+p	{
+	justify-content: center;
+        width: 500px;
+	align-text: left
+        }
+
+.ol	{
+	align- text: center;
+        width: 700px;
+        padding: 50px;
+ 	justify-content: auto;
+        }
+
+body {
+      	background-color: pink;
+    }
